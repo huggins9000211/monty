@@ -95,7 +95,8 @@ void pstr(stack_t **head, unsigned int counter)
 		printf("\n");
 		return;
 	}
-	while ((temp != NULL) && (temp->n != 0) && ((temp->n >= 0) && (temp->n <= 127)))
+	while ((temp != NULL) && (temp->n != 0) &&
+	((temp->n >= 0) && (temp->n <= 127)))
 	{
 		number = temp->n;
 		if (temp == NULL)
@@ -128,7 +129,7 @@ void swap(stack_t **head, unsigned int counter)
 	int number1;
 	int number2;
 
-	if (((*head) == NULL) || ((*head)->next == NULL))
+	if (((*head) == NULL) || head == NULL || ((*head)->next == NULL))
 	{
 		fprintf(stderr, "L%u: can't swap, stack too short\n", counter);
 		exit(EXIT_FAILURE);

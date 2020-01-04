@@ -30,11 +30,12 @@ int strdigit(char *str)
  */
 void free_dlistint(stack_t *head)
 {
-    stack_t *last;
-    while (head != NULL)
-    {
-        last = head;
-        head = last->next;
-        free(last);
-    } 
+	stack_t *last;
+
+	while (head != NULL)
+	{
+		last = head;
+		head = last->next;
+		free(last);
+	}
 }

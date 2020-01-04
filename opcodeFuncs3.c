@@ -13,7 +13,6 @@ void nop(stack_t **head, unsigned int counter)
 {
 	(void)head;
 	(void)counter;
-	return;
 }
 
 /**
@@ -41,7 +40,7 @@ void divv(stack_t **head, unsigned int counter)
 		fprintf(stderr, "L%u: division by zero\n", counter);
 		exit(EXIT_FAILURE);
 	}
-	
+
 	temp = (*head)->next;
 	temp->n = temp->n / number;
 	temp->prev = NULL;

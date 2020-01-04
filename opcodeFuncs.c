@@ -110,7 +110,7 @@ void pop(stack_t **head, unsigned int counter)
 
 void add(stack_t **head, unsigned int counter)
 {
-	
+
 	stack_t *temp;
 	int number = 0;
 
