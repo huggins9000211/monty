@@ -19,7 +19,7 @@ int main(int argc, char const *argv[])
 	char *data;
 	size_t n;
 	ssize_t charsprinted;
-	unsigned int counter = 1;
+	unsigned int counter = 0;
 
 	if (argc != 2)
 	{
@@ -36,6 +36,7 @@ int main(int argc, char const *argv[])
 	{
 		int i = 0;
 
+		counter++;
 		while (linestr[i] == ' ')
 			i++;
 		if (linestr[i] == '#')
@@ -46,7 +47,6 @@ int main(int argc, char const *argv[])
 		data = strtok(NULL, " ");
 		if (opcode)
 			execute(opcode, counter, data);
-		counter++;
 	}
 	fclose(fp);
 	free(strtok_address);
