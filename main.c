@@ -34,11 +34,16 @@ int main(int argc, char const *argv[])
 	}
 	while ((charsprinted = getline(&linestr, &n, fp)) != -1)
 	{
+		int i = 0;
+
+		while (linestr[i] == ' ')
+			i++;
+		if (linestr[i] == '#')
+			continue;
 		strtok_address = linestr;
 		linestr = strtok(linestr, "\n");
 		opcode = strtok(linestr, " ");
 		data = strtok(NULL, " ");
-
 		if (opcode)
 			execute(opcode, counter, data);
 		counter++;
