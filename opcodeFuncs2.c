@@ -129,7 +129,7 @@ void swap(stack_t **head, unsigned int counter)
 	int number1;
 	int number2;
 
-	if (((*head) == NULL) || head == NULL || ((*head)->next == NULL))
+	if (((*head) == NULL) || ((*head)->next == NULL))
 	{
 		fprintf(stderr, "L%u: can't swap, stack too short\n", counter);
 		exit(EXIT_FAILURE);

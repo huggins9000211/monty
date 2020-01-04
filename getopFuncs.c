@@ -22,6 +22,7 @@ void (*get_op_func(char *s))(stack_t **, unsigned int)
 		{"swap", swap},
 		{"nop", nop},
 		{"div", divv},
+		{"mod", mod},
 		{NULL, NULL}
 	};
 	int i = 0;
