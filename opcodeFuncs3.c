@@ -90,6 +90,33 @@ void mod(stack_t **head, unsigned int counter)
 
 void rotl(stack_t **head, unsigned int counter)
 {
+	stack_t **pp;
+	stack_t *temp;
+	(void)counter;
+	if (!*head || !(*head)->next)
+        return;
+
+    
+    pp = &(*head)->next;
+
+  
+    while (*pp && (*pp)->next)
+        pp = &(*pp)->next;
+
+   
+    temp = *head;
+    *head = *pp;
+    *pp = temp;
+
+
+    (*head)->next = (*pp)->next;
+	(*head)->prev = NULL;
+  
+    (*pp)->next = NULL;
+}
+/*
+void rotl(stack_t **head, unsigned int counter)
+{
 	stack_t *new;
 	stack_t *temp;
 
@@ -114,3 +141,4 @@ void rotl(stack_t **head, unsigned int counter)
 	(*head) = (*head)->next;
 	(*head)->prev = NULL;
 }
+*/
