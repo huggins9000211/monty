@@ -90,10 +90,11 @@ void mod(stack_t **head, unsigned int counter)
 
 void rotl(stack_t **head, unsigned int counter)
 {
-	(void)counter;
 	stack_t *new;
-	stack_t *temp = (*head);
-	
+	stack_t *temp;
+
+	(void)counter;
+	temp = *head;
 	new = malloc(sizeof(stack_t));
 	if(new == NULL)
 	{
@@ -112,5 +113,4 @@ void rotl(stack_t **head, unsigned int counter)
 	temp->next = new;
 	(*head) = (*head)->next;
 	(*head)->prev = NULL;
-	
 }
