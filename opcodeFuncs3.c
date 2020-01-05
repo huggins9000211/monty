@@ -114,6 +114,37 @@ void rotl(stack_t **head, unsigned int counter)
   
     (*pp)->next = NULL;
 }
+
+/**
+ * rotr - function subtracts top of the stack from second top of the stack
+ *
+ *@head: double pointer to head of linked list
+ *@counter: unsigned int for line counter
+ *
+ * Return: void
+ */
+
+void rotr(stack_t **head, unsigned int counter)
+{
+	stack_t *copy;
+	stack_t *extra;
+	(void)counter;
+
+	copy = *head;
+	while (copy->next->next != NULL)
+	{
+		copy = copy->next;
+	}
+	extra = copy->next;
+	copy->next = NULL;
+	while (copy->prev != NULL)
+	{
+		copy = copy->prev;
+	}
+	extra->next = copy;
+	extra->prev = NULL;
+	*head = extra;
+}
 /*
 void rotl(stack_t **head, unsigned int counter)
 {
