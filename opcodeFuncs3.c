@@ -78,3 +78,39 @@ void mod(stack_t **head, unsigned int counter)
 	temp->prev = NULL;
 	(*head) = temp;
 }
+
+/**
+ * rotl - function subtracts top of the stack from second top of the stack
+ *
+ *@head: double pointer to head of linked list
+ *@counter: unsigned int for line counter
+ *
+ * Return: void
+ */
+
+void rotl(stack_t **head, unsigned int counter)
+{
+	(void)counter;
+	stack_t *new;
+	stack_t *temp = (*head);
+	
+	new = malloc(sizeof(stack_t));
+	if(new == NULL)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
+	}
+	if(temp == NULL || temp->next == NULL)
+		return;
+	new->n = temp->n;
+	while (temp->next != NULL)
+	{
+		temp = temp->next;
+	}
+	new->prev = temp;
+	new->next = NULL;
+	temp->next = new;
+	(*head) = (*head)->next;
+	(*head)->prev = NULL;
+	
+}
