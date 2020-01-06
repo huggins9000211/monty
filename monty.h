@@ -58,4 +58,5 @@ void divv(stack_t **head, unsigned int counter);
 void nop(stack_t **head, unsigned int counter);
 void mod(stack_t **head, unsigned int counter);
 void rotl(stack_t **head, unsigned int counter);
+void rotr(stack_t **head, unsigned int counter);
 #endif

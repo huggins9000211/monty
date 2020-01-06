@@ -130,6 +130,9 @@ void rotr(stack_t **head, unsigned int counter)
 	stack_t *extra;
 	(void)counter;
 
+	if (!*head || !(*head)->next)
+        return;
+
 	copy = *head;
 	while (copy->next->next != NULL)
 	{
