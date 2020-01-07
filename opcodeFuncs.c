@@ -92,10 +92,12 @@ void pop(stack_t **head, unsigned int counter)
 	}
 	if ((*head)->next == NULL)
 	{
+		free(*head);
 		*head =	NULL;
 		return;
 	}
 	(*head) = (*head)->next;
+	free((*head)->prev);
 	(*head)->prev = NULL;
 }
 
