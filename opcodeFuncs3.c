@@ -43,8 +43,9 @@ void divv(stack_t **head, unsigned int counter)
 
 	temp = (*head)->next;
 	temp->n = temp->n / number;
-	temp->prev = NULL;
 	(*head) = temp;
+	free((*head)->prev);
+	(*head)->prev = NULL;
 }
 
 /**
@@ -75,8 +76,9 @@ void mod(stack_t **head, unsigned int counter)
 
 	temp = (*head)->next;
 	temp->n = temp->n % number;
-	temp->prev = NULL;
 	(*head) = temp;
+	free((*head)->prev);
+	(*head)->prev = NULL;
 }
 
 /**

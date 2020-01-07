@@ -22,9 +22,11 @@ void sub(stack_t **head, unsigned int counter)
 	number = number + (*head)->n;
 	temp = (*head)->next;
 	temp->n = temp->n - number;
-	temp->prev = NULL;
 	(*head) = temp;
+	free((*head)->prev);
+	(*head)->prev = NULL;
 }
+
 
 /**
  * mul - function multiplies second top of the stack with top of the stack
@@ -48,9 +50,11 @@ void mul(stack_t **head, unsigned int counter)
 	number = number + (*head)->n;
 	temp = (*head)->next;
 	temp->n = temp->n * number;
-	temp->prev = NULL;
 	(*head) = temp;
+	free((*head)->prev);
+	(*head)->prev = NULL;
 }
+
 
 /**
  * pchar - function prints char at top of the stack

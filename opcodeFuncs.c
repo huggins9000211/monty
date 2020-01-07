@@ -126,5 +126,6 @@ void add(stack_t **head, unsigned int counter)
 	temp = (*head)->next;
 	temp->n = temp->n + number;
 	(*head) = temp;
+	free((*head)->prev);
 	(*head)->prev = NULL;
 }
