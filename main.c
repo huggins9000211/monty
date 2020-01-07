@@ -14,7 +14,6 @@ int main(int argc, char const *argv[])
 	FILE *fp;
 	char *linestr = NULL;
 	char *opcode = NULL;
-	char *strtok_address = NULL;
 	char *data;
 	size_t n;
 	ssize_t charsprinted;
@@ -40,7 +39,6 @@ int main(int argc, char const *argv[])
 			i++;
 		if (linestr[i] == '#')
 			continue;
-		strtok_address = linestr;
 		linestr = strtok(linestr, "\n");
 		opcode = strtok(linestr, " ");
 		data = strtok(NULL, " ");
@@ -48,7 +46,7 @@ int main(int argc, char const *argv[])
 			execute(opcode, counter, data);
 	}
 	fclose(fp);
-	free(strtok_address);
+	free(linestr);
 	free_dlistint(head);
 	return (0);
 }
