@@ -24,7 +24,9 @@ int strdigit(char *str)
 }
 
 /**
- * freestack - function frees stack_t linked list
+ * free_dlistint - function frees stack_t linked list
+ *
+ * @head: char * to input string
  *
  * Return: nothing
  */
