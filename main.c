@@ -1,5 +1,5 @@
 #include "monty.h"
-stack_t *head = NULL;
+
 /**
  * main - function to run monty files
  *
@@ -11,6 +11,7 @@ stack_t *head = NULL;
 
 int main(int argc, char const *argv[])
 {
+	head = NULL;
 	FILE *fp;
 	char *linestr = NULL;
 	char *opcode = NULL;

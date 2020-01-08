@@ -96,25 +96,24 @@ void rotl(stack_t **head, unsigned int counter)
 	stack_t *temp;
 	(void)counter;
 	if (!*head || !(*head)->next)
-        return;
+		return;
 
-    
-    pp = &(*head)->next;
-
-  
-    while (*pp && (*pp)->next)
-        pp = &(*pp)->next;
-
-   
-    temp = *head;
-    *head = *pp;
-    *pp = temp;
+	pp = &(*head)->next;
 
 
-    (*head)->next = (*pp)->next;
+	while (*pp && (*pp)->next)
+		pp = &(*pp)->next;
+
+
+	temp = *head;
+	*head = *pp;
+	*pp = temp;
+
+
+	(*head)->next = (*pp)->next;
 	(*head)->prev = NULL;
-  
-    (*pp)->next = NULL;
+
+	(*pp)->next = NULL;
 }
 
 /**
@@ -133,7 +132,7 @@ void rotr(stack_t **head, unsigned int counter)
 	(void)counter;
 
 	if (!*head || !(*head)->next)
-        return;
+		return;
 
 	copy = *head;
 	while (copy->next->next != NULL)
@@ -150,31 +149,3 @@ void rotr(stack_t **head, unsigned int counter)
 	extra->prev = NULL;
 	*head = extra;
 }
-/*
-void rotl(stack_t **head, unsigned int counter)
-{
-	stack_t *new;
-	stack_t *temp;
-
-	(void)counter;
-	temp = *head;
-	new = malloc(sizeof(stack_t));
-	if(new == NULL)
-	{
-		fprintf(stderr, "Error: malloc failed\n");
-		exit(EXIT_FAILURE);
-	}
-	if(temp == NULL || temp->next == NULL)
-		return;
-	new->n = temp->n;
-	while (temp->next != NULL)
-	{
-		temp = temp->next;
-	}
-	new->prev = temp;
-	new->next = NULL;
-	temp->next = new;
-	(*head) = (*head)->next;
-	(*head)->prev = NULL;
-}
-*/
