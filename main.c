@@ -1,5 +1,4 @@
 #include "monty.h"
-
 /**
  * main - function to run monty files
  *
@@ -11,7 +10,6 @@
 
 int main(int argc, char const *argv[])
 {
-	head = NULL;
 	FILE *fp;
 	char *linestr = NULL;
 	char *opcode = NULL;
@@ -20,6 +18,7 @@ int main(int argc, char const *argv[])
 	ssize_t charsprinted;
 	unsigned int counter = 0;
 
+	head = NULL;
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
